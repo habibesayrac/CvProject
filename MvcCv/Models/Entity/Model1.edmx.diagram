@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a7233a5726bd463f97fdd421e79170e8" Name="Diagram1">
+      <Diagram DiagramId="a7233a5726bd463f97fdd421e79170e8" Name="Diagram1" ZoomLevel="108">
         <EntityTypeShape EntityType="DbCvModel.TBLDeneyimlerim" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DbCvModel.TBLEgitimlerim" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DbCvModel.TBLHakkimda" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
