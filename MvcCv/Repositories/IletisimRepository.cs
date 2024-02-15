@@ -6,9 +6,7 @@ using System.Web;
 
 namespace MvcCv.Repositories
 {
-    public class DeneyimRepository:GenericRepository<TBLDeneyimlerim>
+    public class IletisimRepository:GenericRepository<TBLİletisim>
     {
-        
-
     }
 }
