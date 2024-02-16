@@ -48,6 +48,11 @@ namespace MvcCv.Controllers
         [HttpPost]
         public ActionResult EgitimGetir(TBLEgitimlerim p)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("EgitimGetir");
+
+            }
             var egitim = repo.Find(x => x.ID == p.ID);
             egitim.Baslik = p.Baslik;
             egitim.AltBaslik1 = p.AltBaslik1;
