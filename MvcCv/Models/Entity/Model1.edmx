@@ -5,6 +5,14 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="DbCvModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TBLAdmin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KullaniciAdi" Type="varchar" MaxLength="20" />
+          <Property Name="Sifre" Type="varchar" MaxLength="20" />
+        </EntityType>
         <EntityType Name="TBLDeneyimlerim">
           <Key>
             <PropertyRef Name="ID" />
@@ -66,6 +74,15 @@
           <Property Name="Tarih" Type="varchar" MaxLength="30" />
           <Property Name="Aciklama" Type="varchar" MaxLength="250" />
         </EntityType>
+        <EntityType Name="TBLSosyalMedya">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ad" Type="varchar" MaxLength="30" />
+          <Property Name="Link" Type="varchar" MaxLength="50" />
+          <Property Name="ikon" Type="varchar" MaxLength="30" />
+        </EntityType>
         <EntityType Name="TBLYeteneklerim">
           <Key>
             <PropertyRef Name="ID" />
@@ -75,12 +92,14 @@
           <Property Name="Oran" Type="tinyint" />
         </EntityType>
         <EntityContainer Name="DbCvModelStoreContainer">
+          <EntitySet Name="TBLAdmin" EntityType="Self.TBLAdmin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLDeneyimlerim" EntityType="Self.TBLDeneyimlerim" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLEgitimlerim" EntityType="Self.TBLEgitimlerim" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLHakkimda" EntityType="Self.TBLHakkimda" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLHobilerim" EntityType="Self.TBLHobilerim" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLİletisim" EntityType="Self.TBLİletisim" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLSertifikalarim" EntityType="Self.TBLSertifikalarim" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLSosyalMedya" EntityType="Self.TBLSosyalMedya" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLYeteneklerim" EntityType="Self.TBLYeteneklerim" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -164,7 +183,26 @@
           <EntitySet Name="TBLİletisim" EntityType="Self.TBLİletisim" />
           <EntitySet Name="TBLSertifikalarim" EntityType="Self.TBLSertifikalarim" />
           <EntitySet Name="TBLYeteneklerim" EntityType="Self.TBLYeteneklerim" />
+          <EntitySet Name="TBLSosyalMedya" EntityType="DbCvModel.TBLSosyalMedya" />
+          <EntitySet Name="TBLAdmin" EntityType="DbCvModel.TBLAdmin" />
         </EntityContainer>
+        <EntityType Name="TBLSosyalMedya">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Link" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ikon" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBLAdmin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KullaniciAdi" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Sifre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -244,6 +282,25 @@
                 <ScalarProperty Name="Oran" ColumnName="Oran" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Yetenek" ColumnName="Yetenek" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLSosyalMedya">
+            <EntityTypeMapping TypeName="DbCvModel.TBLSosyalMedya">
+              <MappingFragment StoreEntitySet="TBLSosyalMedya">
+                <ScalarProperty Name="ikon" ColumnName="ikon" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLAdmin">
+            <EntityTypeMapping TypeName="DbCvModel.TBLAdmin">
+              <MappingFragment StoreEntitySet="TBLAdmin">
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

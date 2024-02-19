@@ -17,6 +17,11 @@ namespace MvcCv.Controllers
 
             return View(degerler);
         }
+        public PartialViewResult SosyalMedya()
+        {
+            var sosyalmedya = db.TBLSosyalMedya.ToList();
+            return PartialView(sosyalmedya);
+        }
         public PartialViewResult Deneyim()
         {
             var deneyimler = db.TBLDeneyimlerim.ToList();
@@ -64,5 +69,6 @@ namespace MvcCv.Controllers
                 return PartialView();
             }
         }
+       
     }
 }
