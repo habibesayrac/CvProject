@@ -8,6 +8,8 @@ using System.Web.Mvc;
 
 namespace MvcCv.Controllers
 {
+    [Authorize]
+
     public class EgitimController : Controller
     {
         EgitimRepository repo = new EgitimRepository();
