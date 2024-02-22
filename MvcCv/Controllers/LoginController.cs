@@ -29,7 +29,7 @@ namespace MvcCv.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "login");
+                return RedirectToAction("Index", "Login");
 
             }
            
